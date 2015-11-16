@@ -18,7 +18,7 @@ namespace Craswell.WebRepositories.Tests
         /// <summary>
         /// Statement date info
         /// </summary>
-        public const string statementDateInfo = "October 01, 2015 to October 31, 2015\nClient #: 1234567987\n";
+        public const string statementDateInfo = "October 01, 2015 to October 31, 2015\nClient #: 3234567987\n";
 
         /// <summary>
         /// Statement account info.
@@ -76,7 +76,7 @@ namespace Craswell.WebRepositories.Tests
         {
             TangerineObjectFactory factory = new TangerineObjectFactory();
 
-            TangerineStatement statement = factory.BuildStatement(statementDateInfo);
+            TangerineStatement statement = factory.BuildStatement(statementDateInfo, statementAccountInfo);
 
             Assert.AreEqual(new DateTime(2015, 10, 31), statement.Timestamp);
             Assert.AreEqual("1234567987", statement.AccountNumber);
